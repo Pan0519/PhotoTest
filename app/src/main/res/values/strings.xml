@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">PhotoTest</string>
+    <string name="app_name">AndroidDemo</string>
     <string name="photo_album">開啟相簿</string>
     <string name="open_file">開啟資料夾</string>
     <string name="take_photo">照相</string>
+
+    <string name="input_item_count">請輸入Item數量</string>
 </resources>
