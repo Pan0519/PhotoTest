@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @BindView(R.id.gridview_btn)
     Button GridLayoutBtn;
+
+    @BindView(R.id.chat_btn)
+    Button ChatBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ToTakePhotoBtn.setOnClickListener(this);
         GridLayoutBtn.setOnClickListener(this);
+        ChatBtn.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +44,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.gridview_btn:
                 intent = new Intent(MainActivity.this, GridLayoutActivity.class);
+                break;
+
+            case R.id.chat_btn:
+                intent = new Intent(MainActivity.this, ChatRoomActivity.class);
                 break;
         }
 
