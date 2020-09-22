@@ -8,13 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class GridLayoutActivity extends AppCompatActivity implements ListView.OnItemSelectedListener, View.OnClickListener {
+public class GridLayoutActivity extends AppCompatActivity implements GridView.OnItemClickListener, View.OnClickListener {
 
     @BindView(R.id.grid_gridView)
     GridView grid_view;
@@ -34,16 +35,7 @@ public class GridLayoutActivity extends AppCompatActivity implements ListView.On
         ButterKnife.bind(this);
 
         showList_btn.setOnClickListener(this);
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
+        grid_view.setOnItemClickListener(this);
     }
 
     @Override
@@ -67,5 +59,10 @@ public class GridLayoutActivity extends AppCompatActivity implements ListView.On
         }
         GridLayoutAdapter layoutAdapter = new GridLayoutAdapter(getApplicationContext(), itemResourceArray);
         grid_view.setAdapter(layoutAdapter);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+        Toast.makeText(GridLayoutActivity.this, String.format("Get Pos - %d, Resoutce Id %d", position, itemResourceArray[position]), Toast.LENGTH_SHORT).show();
     }
 }
