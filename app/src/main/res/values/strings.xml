@@ -5,4 +5,7 @@
     <string name="take_photo">照相</string>
 
     <string name="input_item_count">請輸入Item數量</string>
+
+    <string name="edit_name">發佈人</string>
+    <string name="address">地址</string>
 </resources>
